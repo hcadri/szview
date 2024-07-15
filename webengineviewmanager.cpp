@@ -1,5 +1,7 @@
 #include "webengineviewmanager.h"
 
+#include <QApplication>
+
 WebEngineViewManager::WebEngineViewManager(QObject *parent) : QObject(parent)
 {
     connect(&view, &QWebEngineView::loadFinished, this, &WebEngineViewManager::onLoadFinished);
@@ -9,8 +11,10 @@ void WebEngineViewManager::loadUrl(const QString &urlString)
 {
     currentUrl = urlString;
     QUrl url(urlString);
-    if (!url.isValid()) {
+    if (!url.isValid() || url.isEmpty() || url == QUrl("about:blank")) {
         qInfo() << "Invalid URL: " << urlString;
+        currentUrl = "file://" + QApplication::applicationDirPath() + "/index.html";
+        url = QUrl(currentUrl);
     }
     view.load(url);
     view.resize(1920, 1080); // Example size, adjust as needed

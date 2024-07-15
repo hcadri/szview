@@ -19,6 +19,7 @@ set(PROJECT_SOURCES
         mainwindow.ui
         webengineviewmanager.cpp
         webengineviewmanager.h
+        helpers/configloader.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -73,3 +74,5 @@ endif()
 
 
 configure_file(${CMAKE_SOURCE_DIR}/web/index.html ${CMAKE_BINARY_DIR}/index.html COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/web/logo.png ${CMAKE_BINARY_DIR}/logo.png COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/config.json ${CMAKE_BINARY_DIR}/config.json COPYONLY)
