@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QWebEngineView>
 
+#include "webengineviewmanager.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -15,14 +17,15 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr, const QString& defaultUrl = "");
     ~MainWindow();
 
 
 private:
     Ui::MainWindow *ui;
     QString urlBox;
-    QWebEngineView view;
+    WebEngineViewManager viewManager;
+    QString defaultUrl;
 
 
 

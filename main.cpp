@@ -6,10 +6,18 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
-    MainWindow w;
+    QCoreApplication::setApplicationName("SZViewer");
+    QCoreApplication::setApplicationVersion("1.0");
+    QString defaultUrl;
+    // Check if a URL was provided as a command-line argument
+    if (argc > 1) {
+        defaultUrl = argv[1]; // Use the first argument as the URL
+    } else {
+        defaultUrl = "file://" + QApplication::applicationDirPath() + "/index.html"; // Or set a hardcoded default URL
+    }
+    MainWindow w(nullptr, defaultUrl);
     w.show();
-    return a.exec();
+    return QApplication::exec();
 }
 
 

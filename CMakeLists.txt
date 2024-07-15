@@ -17,6 +17,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        webengineviewmanager.cpp
+        webengineviewmanager.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -68,3 +70,6 @@ install(TARGETS QTWB
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(QTWB)
 endif()
+
+
+configure_file(${CMAKE_SOURCE_DIR}/web/index.html ${CMAKE_BINARY_DIR}/index.html COPYONLY)
