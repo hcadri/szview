@@ -15,9 +15,14 @@ void WebEngineViewManager::loadUrl(const QString &urlString)
         qInfo() << "Invalid URL: " << urlString;
         currentUrl = "file://" + QApplication::applicationDirPath() + "/index.html";
         url = QUrl(currentUrl);
+
+
+
+
     }
     view.load(url);
     view.resize(1920, 1080); // Example size, adjust as needed
+
 }
 
 void WebEngineViewManager::showView()
@@ -36,5 +41,6 @@ void WebEngineViewManager::onLoadFinished(bool success)
         qInfo() << "Failed to load URL: " << currentUrl;
         return;
     }
+
     qInfo() << "Loaded URL: " << currentUrl;
 }
