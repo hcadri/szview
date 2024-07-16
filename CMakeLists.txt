@@ -20,6 +20,8 @@ set(PROJECT_SOURCES
         webengineviewmanager.cpp
         webengineviewmanager.h
         helpers/configloader.cpp
+        helpers/HassioLoader.cpp
+        helpers/HassioLoader.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

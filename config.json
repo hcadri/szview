@@ -1,8 +1,14 @@
 {
   "windowTitle": "SZ Viewer",
-  "defaultUrl": "",
+  "defaultUrl": "https://your.url",
   "windowSize": {
     "width": 800,
     "height": 600
+  },
+  "hassio": {
+    "enabled": false,
+    "url": "http://hassio.local:8123",
+    "username": "your_username",
+    "password": "your_password"
   }
 }
