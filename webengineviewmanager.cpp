@@ -25,6 +25,11 @@ void WebEngineViewManager::showView()
     view.show();
 }
 
+void WebEngineViewManager::close()
+{
+    view.close();
+}
+
 void WebEngineViewManager::onLoadFinished(bool success)
 {
     if (!success) {

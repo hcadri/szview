@@ -27,3 +27,7 @@ void MainWindow::on_goBtn_clicked()
     viewManager.showView();
 }
 
+void MainWindow::on_closeBtn_clicked() {
+    viewManager.close();
+}
+

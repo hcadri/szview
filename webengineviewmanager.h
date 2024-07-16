@@ -13,10 +13,12 @@ public:
     explicit WebEngineViewManager(QObject *parent = nullptr);
     void loadUrl(const QString &urlString);
     void showView();
+    void close();
 
 private:
     QWebEngineView view;
     QString currentUrl;
+
 
     private slots:
         void onLoadFinished(bool success);

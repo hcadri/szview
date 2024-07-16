@@ -2,8 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QWebEngineView>
-
 #include "webengineviewmanager.h"
 
 QT_BEGIN_NAMESPACE
@@ -31,6 +29,6 @@ private:
 
 private slots:
     void on_goBtn_clicked();
-
+    void on_closeBtn_clicked();
 };
 #endif // MAINWINDOW_H
