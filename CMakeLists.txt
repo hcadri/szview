@@ -24,6 +24,8 @@ set(PROJECT_SOURCES
         helpers/configloader.cpp
         helpers/HassioLoader.cpp
         helpers/HassioLoader.h
+        helpers/SimpleHttpServer.cpp
+        helpers/SampleHttpServer.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -15,10 +15,6 @@ void WebEngineViewManager::loadUrl(const QString &urlString)
         qInfo() << "Invalid URL: " << urlString;
         currentUrl = "file://" + QApplication::applicationDirPath() + "/index.html";
         url = QUrl(currentUrl);
-
-
-
-
     }
     view.load(url);
     view.resize(1920, 1080); // Example size, adjust as needed

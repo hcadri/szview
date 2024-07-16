@@ -1,8 +1,9 @@
 #include "mainwindow.h"
 
 #include <QWebEngineView>
-
 #include "./ui_mainwindow.h"
+#include "helpers/SampleHttpServer.h"
+
 MainWindow::MainWindow(QWidget *parent, const QString& defaultUrl)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -13,6 +14,9 @@ MainWindow::MainWindow(QWidget *parent, const QString& defaultUrl)
         viewManager.loadUrl(defaultUrl);
         viewManager.showView();
     }
+
+    SimpleHttpServer *server = new SimpleHttpServer(this);
+    connect(server, &SimpleHttpServer::urlRequested, &viewManager, &WebEngineViewManager::loadUrl);
 }
 
 MainWindow::~MainWindow()
