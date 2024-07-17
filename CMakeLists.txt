@@ -14,6 +14,7 @@ set(QTWEBENGINE_REMOTE_DEBUGGING, 9222)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS WebEngineWidgets)
+find_package(Qt6 REQUIRED COMPONENTS Network)
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -53,6 +54,8 @@ endif()
 
 target_link_libraries(QTWB PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(QTWB PRIVATE Qt6::WebEngineWidgets)
+target_link_libraries(QTWB PRIVATE Qt6::Network)
+
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.

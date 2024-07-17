@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 #include "webengineviewmanager.h"
+#include <QDialog>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QNetworkReply>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -15,7 +19,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr, const QString& defaultUrl = "");
+    explicit MainWindow(QWidget *parent = nullptr, const QString& defaultUrl = "");
     ~MainWindow();
 
 
@@ -24,11 +28,13 @@ private:
     QString urlBox;
     WebEngineViewManager viewManager;
     QString defaultUrl;
-
+    QNetworkAccessManager* networkManager;
 
 
 private slots:
     void on_goBtn_clicked();
     void on_closeBtn_clicked();
+    void loadImageFromUrl(const QString& url);
+    void handleNetworkReply(QNetworkReply* reply);
 };
 #endif // MAINWINDOW_H

@@ -17,8 +17,7 @@ void WebEngineViewManager::loadUrl(const QString &urlString)
         url = QUrl(currentUrl);
     }
     view.load(url);
-    view.resize(1920, 1080); // Example size, adjust as needed
-
+    view.resize(1920, 1080);
 }
 
 void WebEngineViewManager::showView()
