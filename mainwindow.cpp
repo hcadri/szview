@@ -41,9 +41,8 @@ void MainWindow::on_closeBtn_clicked() {
     viewManager.close();
 }
 
-void MainWindow::loadImageFromUrl(const QString& url)
-{
-    QNetworkRequest request(url);
+void MainWindow::loadImageFromUrl(const QString& url) const {
+    const QNetworkRequest request(url);
     networkManager->get(request);
 }
 
@@ -54,15 +53,15 @@ void MainWindow::handleNetworkReply(QNetworkReply* reply)
         QPixmap pixmap;
         pixmap.loadFromData(imageData);
 
-        QDialog *imageDialog = new QDialog(this); // Create a new dialog as a child of the main window
+        auto *imageDialog = new QDialog(this);
         imageDialog->setWindowTitle("Image Viewer");
-        QLabel *imageLabel = new QLabel(imageDialog); // Create a label inside the dialog
-        imageLabel->setPixmap(pixmap); // Set the pixmap to the label
-        QVBoxLayout *layout = new QVBoxLayout(imageDialog); // Create a layout for the dialog
-        layout->addWidget(imageLabel); // Add the label to the layout
-        imageDialog->setLayout(layout); // Set the dialog's layout
-        imageDialog->resize(600, 400); // Resize the dialog to a reasonable size
-        imageDialog->show(); // Show the dialog
+        auto *imageLabel = new QLabel(imageDialog);
+        imageLabel->setPixmap(pixmap);
+        auto *layout = new QVBoxLayout(imageDialog);
+        layout->addWidget(imageLabel);
+        imageDialog->setLayout(layout);
+        imageDialog->resize(600, 400);
+        imageDialog->show();
     }
     reply->deleteLater();
 }

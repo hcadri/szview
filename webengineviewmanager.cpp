@@ -30,8 +30,7 @@ void WebEngineViewManager::close()
     view.close();
 }
 
-void WebEngineViewManager::onLoadFinished(bool success)
-{
+void WebEngineViewManager::onLoadFinished(const bool success) const {
     if (!success) {
         qInfo() << "Failed to load URL: " << currentUrl;
         return;

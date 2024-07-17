@@ -34,7 +34,7 @@ private:
 private slots:
     void on_goBtn_clicked();
     void on_closeBtn_clicked();
-    void loadImageFromUrl(const QString& url);
+    void loadImageFromUrl(const QString& url) const;
     void handleNetworkReply(QNetworkReply* reply);
 };
 #endif // MAINWINDOW_H

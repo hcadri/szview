@@ -21,7 +21,7 @@ private:
 
 
     private slots:
-        void onLoadFinished(bool success);
+        void onLoadFinished(bool success) const;
 };
 
 #endif // WEBENGINEVIEWMANAGER_H
