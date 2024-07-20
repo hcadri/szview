@@ -29,12 +29,12 @@
     <property name="flat">
      <bool>true</bool>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>0</y>
-       <width>124</width>
+       <width>128</width>
        <height>25</height>
       </rect>
      </property>
@@ -75,9 +75,9 @@
    <widget class="QPlainTextEdit" name="urlEdit">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>0</x>
       <y>40</y>
-      <width>341</width>
+      <width>381</width>
       <height>31</height>
      </rect>
     </property>
@@ -98,6 +98,34 @@
      <string>GO</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="fileListWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>130</y>
+      <width>500</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>500</width>
+      <height>200</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1000</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::DashDotLine</enum>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -105,7 +133,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

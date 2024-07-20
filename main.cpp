@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     else {
         defaultUrl = "file://" + QApplication::applicationDirPath() + "/index.html"; // Or set a hardcoded default URL
     }
-    MainWindow w(nullptr, defaultUrl);
+    MainWindow w(nullptr, defaultUrl, config["localMedia"].toString());
     w.show();
     return QApplication::exec();
 }

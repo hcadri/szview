@@ -27,6 +27,8 @@ set(PROJECT_SOURCES
         helpers/HassioLoader.h
         helpers/SimpleHttpServer.cpp
         helpers/SampleHttpServer.h
+        ImageViewer.cpp
+        ImageViewer.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -85,3 +87,14 @@ endif()
 configure_file(${CMAKE_SOURCE_DIR}/web/index.html ${CMAKE_BINARY_DIR}/index.html COPYONLY)
 configure_file(${CMAKE_SOURCE_DIR}/web/logo.png ${CMAKE_BINARY_DIR}/logo.png COPYONLY)
 configure_file(${CMAKE_SOURCE_DIR}/config.json ${CMAKE_BINARY_DIR}/config.json COPYONLY)
+
+# Calculate the path to the MacOS directory inside the QTWB.app bundle
+set(MACOS_BUNDLE_DIR "${CMAKE_BINARY_DIR}/QTWB.app/Contents/MacOS")
+
+# Ensure the target directory exists before copying files
+file(MAKE_DIRECTORY ${MACOS_BUNDLE_DIR})
+
+# Copy files to the MacOS directory inside the QTWB.app bundle
+configure_file(${CMAKE_SOURCE_DIR}/web/index.html ${MACOS_BUNDLE_DIR}/index.html COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/web/logo.png ${MACOS_BUNDLE_DIR}/logo.png COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/config.json ${MACOS_BUNDLE_DIR}/config.json COPYONLY)

@@ -7,7 +7,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QNetworkReply>
-
+#include <QTableWidget>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -19,9 +19,16 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr, const QString& defaultUrl = "");
-    ~MainWindow();
+    void loadFilesAndDisplay(const QString& chars, QTableWidget* table_widget);
+    explicit MainWindow(QWidget *parent = nullptr,
+                        const QString& defaultUrl = "",
+                        const QString& mediaPath = "");
 
+
+    ~MainWindow() override;
+
+public slots:
+    void openFile(const QString& filePath);
 
 private:
     Ui::MainWindow *ui;
@@ -29,7 +36,7 @@ private:
     WebEngineViewManager viewManager;
     QString defaultUrl;
     QNetworkAccessManager* networkManager;
-
+    QTableWidget* fileListWidget;
 
 private slots:
     void on_goBtn_clicked();

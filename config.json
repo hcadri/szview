@@ -1,6 +1,6 @@
 {
   "windowTitle": "SZ Viewer",
-  "defaultUrl": "https://dumb.url",
+  "defaultUrl": "https://demo.screenz.one",
   "windowSize": {
     "width": 800,
     "height": 600
@@ -10,5 +10,6 @@
     "url": "http://hassio.local:8123",
     "username": "your_username",
     "password": "your_password"
-  }
+  },
+  "localMedia": "/Users/cash/project_files/szview"
 }
