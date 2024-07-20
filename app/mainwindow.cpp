@@ -2,7 +2,7 @@
 
 #include <QWebEngineView>
 #include "./ui_mainwindow.h"
-#include "helpers/SampleHttpServer.h"
+#include "SampleHttpServer.h"
 
 MainWindow::MainWindow(QWidget *parent, const QString& defaultUrl)
 : QMainWindow(parent), ui(new Ui::MainWindow), networkManager(new QNetworkAccessManager(this))

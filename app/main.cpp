@@ -2,7 +2,7 @@
 #include <QWebEngineView>
 #include <QApplication>
 #include <ui_mainwindow.h>
-#include "helpers/configloader.cpp"
+#include "configloader.cpp"
 
 int main(int argc, char *argv[])
 {
