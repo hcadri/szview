@@ -30,11 +30,12 @@ void WebEngineViewManager::close()
     view.close();
 }
 
-void WebEngineViewManager::onLoadFinished(const bool success) const {
+void WebEngineViewManager::onLoadFinished(const bool success) {
     if (!success) {
         qInfo() << "Failed to load URL: " << currentUrl;
         return;
     }
 
     qInfo() << "Loaded URL: " << currentUrl;
+    emit loadFinished();
 }

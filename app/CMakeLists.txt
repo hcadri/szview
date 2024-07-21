@@ -27,6 +27,10 @@ set(PROJECT_SOURCES
         HassioLoader.h
         SimpleHttpServer.cpp
         SampleHttpServer.h
+        abstractviewer.cpp
+        abstractviewer.h
+        superwidget.cpp
+        superwidget.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

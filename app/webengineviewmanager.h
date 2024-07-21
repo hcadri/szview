@@ -11,9 +11,12 @@ class WebEngineViewManager : public QObject
     Q_OBJECT
 public:
     explicit WebEngineViewManager(QObject *parent = nullptr);
-    void loadUrl(const QString &urlString);
+    void loadUrl(const QString& urlString);
     void showView();
     void close();
+
+signals:
+    int loadFinished();
 
 private:
     QWebEngineView view;
@@ -21,7 +24,7 @@ private:
 
 
     private slots:
-        void onLoadFinished(bool success) const;
+        void onLoadFinished(bool success);
 };
 
 #endif // WEBENGINEVIEWMANAGER_H

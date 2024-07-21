@@ -3,6 +3,8 @@
 #include <QApplication>
 #include <ui_mainwindow.h>
 #include "configloader.cpp"
+#include "superwidget.h"
+#include <QStatusBar>
 
 int main(int argc, char *argv[])
 {
@@ -26,6 +28,7 @@ int main(int argc, char *argv[])
         defaultUrl = "file://" + QApplication::applicationDirPath() + "/index.html"; // Or set a hardcoded default URL
     }
     MainWindow w(nullptr, defaultUrl);
+
     w.show();
     return QApplication::exec();
 }
